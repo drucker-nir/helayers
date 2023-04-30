@@ -2,7 +2,7 @@ site_name: IBM HElayers
 site_url: https://ibm.github.io/helayers/
 site_author: IBM FHE team
 site_description: >-
-  IBM HElayers homomorphic encryption SDK for C++ and Python
+  IBM HElayers homomorphic encryption SDK
 
 # Repository
 #repo_name: IBM/helayers
@@ -10,13 +10,22 @@ site_description: >-
 
 nav:
   - Home: index.md
-  - Python for x86: pylab.md
-  - C++ for x86: lab.md
-  - Python for Z: pylab-s390x.md
-  - C++ for Z: lab-s390x.md
-  - Documentation:
+  - Installation: installation.md
+  - FHE Overview: 
+    - FHE: fhe_overview.md
+    - Security models: security.md
+    - Designing a solution: solution.md
+    - Key Management: keys.md
+  - HElayers Overview: 
+    - HElayers: overview.md
+    - Onnx support: onnx.md
+  - Demos: demos.md
+  - Release notes: CHANGELOG.md
+  - Resources: resources.md
+  - API Documentation:
     - Python SDK: python-sdk/latest
     - C++ SDK: cpp-sdk/latest
+  - Contact us: contact.md
 
 # Copyright
 #copyright: Copyright &copy; 2022 IBM
@@ -27,4 +36,24 @@ theme:
     text: IBM Plex Sans
     code: IBM Plex Mono
   features:
-    - navigation.expand
+    - navigation.expand=false
+  highlightjs: true
+  palette:
+    primary: blue
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
