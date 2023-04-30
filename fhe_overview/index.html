@@ -1,0 +1,698 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM HElayers homomorphic encryption SDK">
+      
+      
+        <meta name="author" content="IBM FHE team">
+      
+      
+        <link rel="canonical" href="https://ibm.github.io/helayers/fhe_overview/">
+      
+      
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../security/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>FHE - IBM HElayers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fhe-faq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IBM HElayers" class="md-header__button md-logo" aria-label="IBM HElayers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM HElayers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FHE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IBM HElayers" class="md-nav__button md-logo" aria-label="IBM HElayers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM HElayers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          FHE Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          FHE Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          FHE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        FHE
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fhe-faq" class="md-nav__link">
+    FHE FAQ
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solution/" class="md-nav__link">
+        Designing a solution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keys/" class="md-nav__link">
+        Key Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          HElayers Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          HElayers Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        HElayers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onnx/" class="md-nav__link">
+        Onnx support
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/" class="md-nav__link">
+        Demos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG/" class="md-nav__link">
+        Release notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          API Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          API Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-sdk/latest" class="md-nav__link">
+        Python SDK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp-sdk/latest" class="md-nav__link">
+        C++ SDK
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        Contact us
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fhe-faq" class="md-nav__link">
+    FHE FAQ
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>FHE</h1>
+
+<p>Protecting data confidentiality happens in three main locations. </p>
+<ul>
+<li><strong>At rest</strong>, e.g., by using symmetric encryption such as <a href="https://doi.org/10.6028/NIST.SP.800-38D">AES-GCM</a> or <a href="https://doi.org/10.6028/NIST.SP.800-38E">AES-XTS</a>. </li>
+<li><strong>In transit</strong>, e.g., by using cryptographic protocols such as <a href="https://www.rfc-editor.org/rfc/rfc8446">TLS 1.3</a>.</li>
+<li><strong>In use</strong>, e.g., by using Fully Homomorphic Encryption (FHE).</li>
+</ul>
+<p>This page provides a short overview of how FHE assists in protecting data confidentiality while in use. Consider the following simple scenario with two parties a data owner and an untrusted server, where the data owner wishes to use the server to perform some computations over its data <span class="arithmatex">\(m_i\)</span>, <span class="arithmatex">\(i=1,2,3\)</span>. </p>
+<p>For that, it sends <span class="arithmatex">\(m_i\)</span> (maybe using a secure channel such as <a href="https://www.rfc-editor.org/rfc/rfc8446">TLS 1.3</a>) to the server, which can evaluate some mathematical operations on top of this data. Once done, the server ships the results <span class="arithmatex">\(m_{res}\)</span> back to the data owner.</p>
+<p><img alt="Unencrypted" src="../imgs/cloud_unencrypted.PNG" /></p>
+<p>The issue is that the untrusted server can learn the confidential information <span class="arithmatex">\(m_i\)</span>. To avoid that, the data owner may attempt to use some standard encryption method such as AES to encrypt the data into ciphertexts <span class="arithmatex">\(c_i = Enc(m_i)\)</span>. However, this blocks the server from performing any computation on the data, i.e., it can only be used as a storage server, which misses the goal of using that server, to begin with.</p>
+<p><img alt="Symmetric encryption" src="../imgs/cloud_symmetric.PNG" /></p>
+<p>That is exactly the place where FHE can help, as it enables the data owner to perform computations on encrypted data. With FHE, the data owner can encrypt its confidential data <span class="arithmatex">\(c_i = Enc(m_i)\)</span>, and upload it to the untrusted server, which can perform operations like multiplication and addition over the ciphertexts <span class="arithmatex">\(c_i\)</span>, without learning anything on the original data <span class="arithmatex">\(m_i\)</span>. When the data owner decrypts the result, it should be the same as if it were done unencrypted (rounded within a certain error tolerance). <strong>Only the data owner who owns the private key can decrypt and observe the result.</strong></p>
+<p><img alt="with FHE" src="../imgs/cloud_FHE.PNG" /></p>
+<p>Using additions and multiplications is enough for performing many types of operations in an untrusted environment. For example, performing deep neural network inference operations.</p>
+<p><img alt="with FHE NN" src="../imgs/cloud_NN.PNG" /></p>
+<p>To learn more about the FHE technology see the <a href="#fhe-faq">FHE FAQ</a> section below, or use some recommended <a href="../resources/#fhe">external resources</a></p>
+<h3 id="fhe-faq">FHE FAQ</h3>
+<details class="question">
+<summary>What does a scheme mean in FHE?</summary>
+<p>An FHE cryptographic scheme is a specific set of algorithms that describe the underlying mathematics being used to perform homomorphic calculations. Different schemes provide different capabilities and have different characteristics.</p>
+</details>
+<details class="question">
+<summary>What capabilities mdoern FHE schemes provide</summary>
+<p>Exact FHE schemes such as BGV, B/FV, and TFHE provide at least the following set of operations:</p>
+<ul>
+<li>Encryption <span class="arithmatex">\(c=Enc(m)\)</span> - that recieves a data message <span class="arithmatex">\(m\)</span> and encrypts it to a ciphertext <span class="arithmatex">\(c\)</span>.</li>
+<li>Decryption <span class="arithmatex">\(m=Dec(c)\)</span> - that recieves a ciphertext <span class="arithmatex">\(c\)</span> and decrypt it to the underlying data message <span class="arithmatex">\(m\)</span>.</li>
+<li>Addition <span class="arithmatex">\(c_{add}=Enc(c_1, c_2)\)</span> - that recieves two ciphertext <span class="arithmatex">\(c_1, c_2\)</span> and add them such that <span class="arithmatex">\(<span class="arithmatex">\(Dec(c_{add}) = Dec(Enc(c_1)) + Dec(Enc(c_2))\)</span>\)</span>.</li>
+<li>Multiplicaiton <span class="arithmatex">\(c_{mul}=Enc(c_1, c_2)\)</span> - that recieves two ciphertext <span class="arithmatex">\(c_1, c_2\)</span> and multiply them such that <span class="arithmatex">\(<span class="arithmatex">\(Dec(c_{add}) = Dec(Enc(c_1)) * Dec(Enc(c_2))\)</span>\)</span>.</li>
+</ul>
+<p>Apprixmated FHE schemes such as CKKS provide at least the following set of operations for some small <span class="arithmatex">\(\epsilon\)</span>:</p>
+<ul>
+<li>Encryption <span class="arithmatex">\(c=Enc(m)\)</span> - that recieves a data message <span class="arithmatex">\(m\)</span> and encrypts it to a ciphertext <span class="arithmatex">\(c\)</span>.</li>
+<li>Decryption <span class="arithmatex">\(m = Dec(c) + \epsilon\)</span> - that recieves a ciphertext <span class="arithmatex">\(c\)</span> and decrypt it to the underlying data message <span class="arithmatex">\(m\)</span>.</li>
+<li>Addition <span class="arithmatex">\(c_{add}=Enc(c_1, c_2)\)</span> - that recieves two ciphertext <span class="arithmatex">\(c_1, c_2\)</span> and add them such that $$Dec(c_{add}) = Dec(Enc(c_1)) + Dec(Enc(c_2))  + \epsilon $$.</li>
+<li>Multiplicaiton <span class="arithmatex">\(c_{mul}=Enc(c_1, c_2)\)</span> - that recieves two ciphertext <span class="arithmatex">\(c_1, c_2\)</span> and multiply them such that $$Dec(c_{add}) = Dec(Enc(c_1)) * Dec(Enc(c_2))  + \epsilon $$.</li>
+</ul>
+</details>
+<details class="question">
+<summary>What FHE schemes exist and why would I use one over the other?</summary>
+<p>There are different cryptographic schemes such as BGV, B/FV, TFHE and CKKS. They differ by the type of input they recieve and output they provide. For example, BGV, B/FV and TFHE operate on integers (e.g. doing a database lookup and checking to see if two numbers are the same) while CKKS is best used with real or complex numbers (e.g. AI/ML applications like neural networks).</p>
+</details>
+<details class="question">
+<summary>Is FHE quantum-safe and what does quantum-safe mean?</summary>
+<p>Yes, modern FHE is considered to be quantum-safe. Quantum-safe encryption algorithm maintains the confidentiality of encrypted data even in the presence of large quantum computers. Most FHE schemes today rely on lattice-based cryptography, which is considered secure against quantum attacks. </p>
+</details>
+<details class="question">
+<summary>How is FHE different from a Trusted Execution Environment?</summary>
+<p>With a Trusted Execution Environment (TEE), one can run computations on unencrypted data with a hardware enforced root of trust. A TEE is intended to be secure by design, however if an application running within it had a security issue (insecure code, application code deployed with malicious malware, zero day exploit, etc), your data may be exposed and an attacker might be able to exfiltrate or manipulate your data.</p>
+<p>But with FHE, data remains encrypted at all times even during data leakage or exfiltration. FHE (which guarantees data confidentiality at all times) and a TEE (which provides data integrity) can be combined to secure your 'crown jewel' sensitive data.</p>
+</details>
+<details class="question">
+<summary>What are low level primitives?</summary>
+<p>Low level primitives are the base operations that can be performed directly on ciphertext and include multiplication, addition, and rotation. All higher level functions are implemented in terms of low level primitives, which make them homomorphic as well. </p>
+</details>
+<details class="question">
+<summary>What are high level primitives?</summary>
+<p>Complex operations like operations on matrices or arrays are built upon the low level primitives. These operations, e.g., <a href="../resources/#tile-tensors">tile tensors</a>, are already implemented and provided by HElayers.</p>
+</details>
+<details class="question">
+<summary>Is FHE Turing complete?</summary>
+<p>FHE is Turing complete because, in theory, it can perform any function that is computable. Even approximate schemes that until recently were not considered turing complete schemes are now such, see <a href="https://eprint.iacr.org/2022/1298">BLEACH</a></p>
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand=false"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

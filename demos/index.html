@@ -1,0 +1,950 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM HElayers homomorphic encryption SDK">
+      
+      
+        <meta name="author" content="IBM FHE team">
+      
+      
+        <link rel="canonical" href="https://ibm.github.io/helayers/demos/">
+      
+      
+        <link rel="prev" href="../onnx/">
+      
+      
+        <link rel="next" href="../CHANGELOG/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Demos - IBM HElayers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tutorials" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IBM HElayers" class="md-header__button md-logo" aria-label="IBM HElayers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM HElayers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Demos
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IBM HElayers" class="md-nav__button md-logo" aria-label="IBM HElayers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM HElayers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          FHE Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          FHE Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fhe_overview/" class="md-nav__link">
+        FHE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solution/" class="md-nav__link">
+        Designing a solution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keys/" class="md-nav__link">
+        Key Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          HElayers Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          HElayers Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        HElayers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onnx/" class="md-nav__link">
+        Onnx support
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Demos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Demos
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    Tutorials
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lower-lavel-apis" class="md-nav__link">
+    Lower-lavel APIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases-based-tutorials" class="md-nav__link">
+    Use cases based tutorials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning-inference" class="md-nav__link">
+    Machine Learning Inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#databases" class="md-nav__link">
+    Databases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utiltiies" class="md-nav__link">
+    Utiltiies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-tutorials" class="md-nav__link">
+    Other tutorials
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-only-tutorials" class="md-nav__link">
+    C++ only tutorials
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG/" class="md-nav__link">
+        Release notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        Resources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          API Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          API Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-sdk/latest" class="md-nav__link">
+        Python SDK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp-sdk/latest" class="md-nav__link">
+        C++ SDK
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        Contact us
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials" class="md-nav__link">
+    Tutorials
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lower-lavel-apis" class="md-nav__link">
+    Lower-lavel APIs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases-based-tutorials" class="md-nav__link">
+    Use cases based tutorials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning-inference" class="md-nav__link">
+    Machine Learning Inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    Training
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#databases" class="md-nav__link">
+    Databases
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#utiltiies" class="md-nav__link">
+    Utiltiies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-tutorials" class="md-nav__link">
+    Other tutorials
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c-only-tutorials" class="md-nav__link">
+    C++ only tutorials
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Demos</h1>
+
+<p>HElayers demonstrates several end-to-end use cases that are implemented through a series of stand-alone tutorials. </p>
+<p>In most cases, the tutorials assume the existence of two parties: a data owner and an untrusted server. For simplification and educational purposes, the tutorials run both the data-owner and untrusted server parts on the same machine, where the communication between them is done via files. If needed HElayers users can pull the two parts apart and load them onto different machines. In that case, the users would need to implement a mechanism for sending files over or replace the I/O API to write to sockets or other communication means instead of files.</p>
+<p>Most demos are available in two forms: as C++ code using the library’s C++ API, or as a Jupyter notebook using the library’s Python API.</p>
+<p>The demos use three backends: SEAL, HELib, and HEaaN. For most demos it is easy to switch between different backends, and explore which works best in each case.</p>
+<h2 id="tutorials">Tutorials</h2>
+<h3 id="lower-lavel-apis">Lower-lavel APIs</h3>
+<table>
+<thead>
+<tr>
+<th>Tutorial name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FHE basics</td>
+<td>The tutorial provides basic usage example of the HEBase layer of HeLayers.</td>
+</tr>
+<tr>
+<td>Tile tensor API tutorial</td>
+<td>Two demos demonstrating the <code>pyhelayersext</code> API, which offers easy integration with <code>scikit-learn/keras</code> libraries. We add a single import instruction to a regular training and testing script, and it replaces <code>scikit-learn/keras</code> predictions with the FHE implementation. The FHE configuration details are taken from <code>fhe.json</code> configuration file.</td>
+</tr>
+<tr>
+<td>MLToolbox demonstration</td>
+<td>Using MLToolbox to convert a general NN model into an FHE-Friendly NN model with nearly the same performance, that can later be encrypted and used for prediction on encrypted data.</td>
+</tr>
+<tr>
+<td>A demo of use of a multi-party FHE setting</td>
+<td>In this setting, a set of parties wish to compute some function over their secret data while not revealing it to any of the other parties. Using a regular public-key setting will not be secure, since it requires the parties to trust the holder of the secret key (whether it is one of the parties or a "trusted" third party). In the multi-party FHE setting, none of the parties has a hold on the secret key. Instead, each party has its own secret key (therefore, it will also be called a "key-owner" later on). The public keys (which includes the encryption key and the evaluation keys) are generated in a initialization protocol (a.k.a InitProtocol) between the parties. To decrypt a ciphertext, each of the parties (key-owners) needs to give its consent and to take part in a decryption protocol (a.k.a. DecryptProtocol)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="use-cases-based-tutorials">Use cases based tutorials</h3>
+<table>
+<thead>
+<tr>
+<th>Tutorial name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Credit card fraud detection using neural network inference.</td>
+<td>The network’s architecture is an FHE-friendly variant of a network implemented by the <a href="https://www.kaggle.com/omkarsabnis/credit-card-fraud-detection-using-neural-networks">Kaggle community</a> (see also <a href="../resources/#credit-card-fraud-detection-using-nn-inference">other resources</a>). The network was trained using a realistic dataset taken from Credit Card Fraud Detection. This dataset contains actual anonymized transactions made by credit card holders from September 2013, and is labeled for transactions being fraudulent or genuine. The server works with both network and incoming data encrypted. Can be configured for throughput or latency, reaching a maximum of 4000 samples per second throughput on a benchmark machine (see below), or minimal latency of 0.5 second (including I/O and encrypt/decrypt time).</td>
+</tr>
+<tr>
+<td>Heart disease detection using neural network inference (<a href="../resources/#heart-disease-detection-using-nn-inference">resources</a>)</td>
+<td></td>
+</tr>
+<tr>
+<td>COVID-19 predictions using <a href="../resources/#public-datasets">encrypted CT scans</a></td>
+<td>Each image is <span class="arithmatex">\(224 \times 244 \times 3\)</span> pixels, and the prediction is done using a 5 layer convolutional neural network.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="machine-learning-inference">Machine Learning Inference</h3>
+<table>
+<thead>
+<tr>
+<th>Tutorial name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARIMA prediction</td>
+<td>ARIMA model training and prediction on encrypted data.</td>
+</tr>
+<tr>
+<td>Linear regression inference</td>
+<td>Compute a linear regression model inference over a batch of input vectors</td>
+</tr>
+<tr>
+<td>Logistic regression inference</td>
+<td>Compute a logistic regression model inference over a batch of input vectors</td>
+</tr>
+<tr>
+<td>Kmeans inference: compute the nearest centroid for a set of input vector</td>
+<td>The Euclidean distances are computed under encryption, and the final arg-min computation is done in post-processing on the client side</td>
+</tr>
+<tr>
+<td><a href="../resources/#public-datasets">MNIST</a> classification</td>
+<td>A known HE network inference benchmark architecture <a href="../resources/#neural-network-architectures">CryptoNets</a>, used for classifying images of digits. The network has a convolution layer, followed by two fully connected ones. The server works with both network and incoming data encrypted. Can be configured for throughput or latency, reaching a maximum of 4400 samples per second throughput on a benchmark machine (see below), or minimal latency of 0.7 second.</td>
+</tr>
+<tr>
+<td>Image classification using an <a href="../resources/#neural-network-architectures">HE friendly modified version of AlexNet, SqueezeNet or ResNet-18</a></td>
+<td>It computes inference over a single 50K RGB pixel encrypted image in 3.5 minutes (AlexNet) with a non-encrypted model on a 88-CPU threads machine</td>
+</tr>
+<tr>
+<td>Prediction over the <a href="../resources/#public-datasets">Iris dataset</a> using an XGBoost model</td>
+<td>First, an XGBoost model is trained in the clear. Then, the trained model is encrypted and used to run prediction over encrypted test samples from the iris dataset. For now, the FHE XGBoost model is programmed to maximize throughput, which may come at the account of higher latency. A latency minimization support may be added in future versions.</td>
+</tr>
+<tr>
+<td>Text classification</td>
+<td>This tutorial is based on the <a href="../resources/#public-datasets">20-newsgroups dataset</a> and classifies a text snippet to its relevant category. The tutorial includes training the neural network model in the clear, then performing inference under encryption. The tutorial uses only 4 out of the 20 available categories.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="training">Training</h3>
+<table>
+<thead>
+<tr>
+<th>Tutorial name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Logistic Regression Training on a Credit Card Fraud Detection Dataset</td>
+<td>A demo demonstrating the training of a logistic regression encrypted model under HE using an encrypted dataset of credit card transactions. The trained model is used to run inference on encrypted samples.</td>
+</tr>
+<tr>
+<td>Completely Random Forest training over encrypted data</td>
+<td>A demo demonstrating the training process of a <a href="../resources/#completely-random-forest">Completely Random Forest</a> model with encrypted samples from <a href="../resources/#public-datasets">UCI's Adult dataset</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="databases">Databases</h3>
+<table>
+<thead>
+<tr>
+<th>Tutorial name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Database query</td>
+<td>Several demonstrations of various techniques to query an encrypted database. We show a unique select demo over a database encrypted with BGV, and more general tools for doing encrypted queries for count, sum, average and standard deviation, conditioned on either equality or greater-than operators, using the CKKS scheme (the CKKS demo is in C++ only). The server sees nothing except the names of the columns being queried and the type of condition (equality or greater-than, etc...).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="utiltiies">Utiltiies</h3>
+<table>
+<thead>
+<tr>
+<th>Tutorial name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calculation of one-hot encoding under homomorphic encryption</td>
+<td>One-hot encoding converts a number 1-n to a vector of n 0-1 indicators. Given an encrypted input vector of numbers and a vector of possible values that the input vector might contain, we calculate a set of encrypted indicator vectors. Each indicator vector corresponds to a different possible value and contains 1 in the slots where that value appears in the original vector.</td>
+</tr>
+<tr>
+<td>A demo of Private Set Intersection (PSI) process between three parties to be used for Vertical Federated Learning (VFL)</td>
+<td>PSI is the process of finding common entries in two datasets or more without disclosing any information about the data. In VFL the dataset is paritioned "vertically" between the parties, meaning that each party holds different features of some subset of the samples, while each sample is identified by a unique UID. Given list of UIDs and the partial dataset of one of the parties, the objective is to calculate an encrypted dataset that contains only the samples that appear also in the datasets of the other parties, and do so without disclosing any information to each of the parties.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-tutorials">Other tutorials</h3>
+<table>
+<thead>
+<tr>
+<th>Tutorial name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entity Resolution (ER)</td>
+<td>identifying different records that refer to the same entity, and then handling the identified records as needed. The example demonstrates a specific case of ER, namely Record-Linkage (RL), that deals with identifying records in different databases which refer to the same entity. Our ER library performs such Record-Linkage in a privacy-preserving manner (PPRL) without using FHE.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c-only-tutorials">C++ only tutorials</h2>
+<table>
+<thead>
+<tr>
+<th>Tutorial name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CircLayer tutorial</td>
+<td>A demo of low level optimization achievable by examining the computation circuit.</td>
+</tr>
+<tr>
+<td>Bitwise tutorial</td>
+<td>A tutorial of HEbase's API for bitwise scheme</td>
+</tr>
+<tr>
+<td>Credit card fraud detection using a decision tree</td>
+<td>The decision tree was trained in the clear on the same data set as above. The server performs classification when both tree and incoming data are encrypted.</td>
+</tr>
+<tr>
+<td>CKKS noise reduction procedure</td>
+<td>a demo which demonstrates how the use of a noise cleanup procedure in CKKS enables deep computation of Conway's game of life for unlimited rounds. This computation involves hundreds of bootstrapping operations without errors when compared to plaintext version of the computation. Without the clean up procedure the computation fails after few rounds.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand=false"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

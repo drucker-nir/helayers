@@ -1,0 +1,971 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="IBM HElayers homomorphic encryption SDK">
+      
+      
+        <meta name="author" content="IBM FHE team">
+      
+      
+        <link rel="canonical" href="https://ibm.github.io/helayers/resources/">
+      
+      
+        <link rel="prev" href="../CHANGELOG/">
+      
+      
+        <link rel="next" href="../contact/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.8">
+    
+    
+      
+        <title>Resources - IBM HElayers</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ded33207.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#news" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="IBM HElayers" class="md-header__button md-logo" aria-label="IBM HElayers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            IBM HElayers
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Resources
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="IBM HElayers" class="md-nav__button md-logo" aria-label="IBM HElayers" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    IBM HElayers
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          FHE Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          FHE Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fhe_overview/" class="md-nav__link">
+        FHE
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security/" class="md-nav__link">
+        Security models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solution/" class="md-nav__link">
+        Designing a solution
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../keys/" class="md-nav__link">
+        Key Management
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          HElayers Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          HElayers Overview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        HElayers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onnx/" class="md-nav__link">
+        Onnx support
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demos/" class="md-nav__link">
+        Demos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG/" class="md-nav__link">
+        Release notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Resources
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#news" class="md-nav__link">
+    News
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blogs" class="md-nav__link">
+    Blogs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tile-tensors" class="md-nav__link">
+    Tile Tensors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#he-friendly-neural-networks" class="md-nav__link">
+    HE-Friendly neural networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fhe-theory" class="md-nav__link">
+    FHE Theory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementations-optimization-and-security" class="md-nav__link">
+    Implementations optimization and security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-preserving-record-linkage" class="md-nav__link">
+    Privacy-Preserving Record Linkage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials-references" class="md-nav__link">
+    Tutorials references
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorials references">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-datasets" class="md-nav__link">
+    Public Datasets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-architectures" class="md-nav__link">
+    Neural Network Architectures
+  </a>
+  
+    <nav class="md-nav" aria-label="Neural Network Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credit-card-fraud-detection-using-nn-inference" class="md-nav__link">
+    Credit card fraud detection using NN inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heart-disease-detection-using-nn-inference" class="md-nav__link">
+    Heart disease detection using NN inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completely-random-forest" class="md-nav__link">
+    Completely Random Forest
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          API Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          API Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-sdk/latest" class="md-nav__link">
+        Python SDK
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cpp-sdk/latest" class="md-nav__link">
+        C++ SDK
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contact/" class="md-nav__link">
+        Contact us
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#news" class="md-nav__link">
+    News
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blogs" class="md-nav__link">
+    Blogs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tile-tensors" class="md-nav__link">
+    Tile Tensors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#he-friendly-neural-networks" class="md-nav__link">
+    HE-Friendly neural networks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fhe-theory" class="md-nav__link">
+    FHE Theory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementations-optimization-and-security" class="md-nav__link">
+    Implementations optimization and security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#privacy-preserving-record-linkage" class="md-nav__link">
+    Privacy-Preserving Record Linkage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tutorials-references" class="md-nav__link">
+    Tutorials references
+  </a>
+  
+    <nav class="md-nav" aria-label="Tutorials references">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#public-datasets" class="md-nav__link">
+    Public Datasets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neural-network-architectures" class="md-nav__link">
+    Neural Network Architectures
+  </a>
+  
+    <nav class="md-nav" aria-label="Neural Network Architectures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#credit-card-fraud-detection-using-nn-inference" class="md-nav__link">
+    Credit card fraud detection using NN inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heart-disease-detection-using-nn-inference" class="md-nav__link">
+    Heart disease detection using NN inference
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completely-random-forest" class="md-nav__link">
+    Completely Random Forest
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Resources</h1>
+
+<h4 id="news">News</h4>
+<ul>
+<li>2020 Jan 10,  <font size=3><a href="https://ibm-research.medium.com/top-brazilian-bank-pilots-privacy-encryption-quantum-computers-cant-break-92ed2695bf14">Top Brazilian Bank Pilots Privacy Encryption Quantum Computers Can’t Break</a></font></li>
+</ul>
+<h4 id="blogs">Blogs</h4>
+<p><a href="https://developer.ibm.com/blogs/secure-ai-workloads-using-fully-homomorphic-encrypted-data/" target=”_blank”>IBM Developer Blog</a></p>
+<h4 id="tile-tensors">Tile Tensors</h4>
+<ul>
+<li><font size=3>HElayers: A Tile Tensors Framework for Large Neural Networks on Encrypted Data. [<a href="https://arxiv.org/abs/2011.01805">arXiv</a>, <a href="https://petsymposium.org/popets/2023/popets-2023-0020.php">PETs 2023</a>]</li>
+<li>Complex Encoded Tile Tensors: Accelerating Encrypted Analytics. [<a href="https://ieeexplore.ieee.org/document/9805391">IEEE Security and Privacy</a>]</font></li>
+<li>Advanced homomorphic encryption packing methods with applications to machine learning. [<a href="https://research.ibm.com/haifa/dept/vst/tutorial_ccs2022.html">CCS 2022 Tutorial webpage</a>].</font></li>
+</ul>
+<h4 id="he-friendly-neural-networks">HE-Friendly neural networks</h4>
+<ul>
+<li><font size=3>A methodology for training homomorphic encryption friendly neural networks [<a href="https://arxiv.org/abs/2111.03362">arXiv</a>, <a href="https://link.springer.com/chapter/10.1007/978-3-031-16815-4_29">SIMLA 2022</a>]</li>
+<li>HE-PEx: Efficient Machine Learning under Homomorphic Encryption using Pruning, Permutation and Expansion [<a href="https://arxiv.org/abs/2207.03384">arXiv</a>].</li>
+<li>Secure SqueezeNet inference in 4 minutes. 43rd IEEE Symposium on Security and Privacy [<a href="https://www.ieee-security.org/TC/SP2022/program-posters.html">s&amp;p 2022 posters</a>, <a href="https://www.ieee-security.org/TC/SP2022/downloads/SP22-posters/sp22-posters-50.pdf">pdf</a>].</font></li>
+</ul>
+<h4 id="fhe-theory">FHE Theory</h4>
+<ul>
+<li><font size=3> BLEACH: Cleaning Errors in Discrete Computations over CKKS [<a href="https://eprint.iacr.org/2022/1298">ePrint</a>].</font></li>
+</ul>
+<h4 id="implementations-optimization-and-security">Implementations optimization and security</h4>
+<ul>
+<li><font size=3>Timing leakage analysis of non-constant-time NTT implementations with Harvey butterflies [<a href="https://eprint.iacr.org/2022/094">ePrint</a>,  <a href="https://link.springer.com/chapter/10.1007/978-3-031-07689-3_8">CSCML 2022</a>].</li>
+<li>NTT software optimization using an extended Harvey butterfly [<a href="https://eprint.iacr.org/2021/1396">ePrint</a>].</font></li>
+</ul>
+<h4 id="privacy-preserving-record-linkage">Privacy-Preserving Record Linkage</h4>
+<ul>
+<li><font size=3>Privacy-preserving record linkage using local sensitive hash and private set intersection [<a href="https://arxiv.org/abs/2203.14284">arXiv</a>, <a href="https://link.springer.com/chapter/10.1007/978-3-031-16815-4_22">Cloud &amp; Security 2022</a>].</font></li>
+</ul>
+<h2 id="tutorials-references">Tutorials references</h2>
+<p>Some of the <a href="../demos/">tutorials</a> that HElayers provide are based on prior-art data or on public datasets, which are listed below.</p>
+<h3 id="public-datasets">Public Datasets</h3>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th><div style="min-width:250px">Description</div></th>
+<th><div style="min-width:250px">Reference</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adult</td>
+<td>Predict whether income exceeds $50K/yr based on census data. Also known as "Census Income" dataset. Number of Instances: 48842. Number of Attributes: 14</td>
+<td>Kohavi, R., Becker, B.: Uci machine learning repository: adult dataset (1996), <a href="https://archive.ics.uci.edu/ml/datasets/adult">Link</a></td>
+</tr>
+<tr>
+<td>Iris</td>
+<td>Famous database; from Fisher, 1936. Number of Instances: 150. Number of Attributes: 4</td>
+<td>C. L. Blake and C. J. Merz, UCI Repository of machine learning databases: iris dataset <a href="https://archive.ics.uci.edu/ml/datasets/iris">Link</a></td>
+</tr>
+<tr>
+<td>ImageNet</td>
+<td>an image database organized according to the WordNet hierarchy (currently only the nouns), in which each node of the hierarchy is depicted by hundreds and thousands of images. Image-size: 224x224x3</td>
+<td><a href="https://www.image-net.org/about.php">Link</a></td>
+</tr>
+<tr>
+<td>MNIST</td>
+<td>The MNIST database of handwritten digits, has a training set of 60,000 examples, and a test set of 10,000 examples. Image size: 28x28x1</td>
+<td>LeCun, Yann and Cortes, Corinna. "MNIST handwritten digit database." <a href="http://yann.lecun.com/exdb/mnist/">Link</a> (2010)</td>
+</tr>
+<tr>
+<td>Newsgroups</td>
+<td>This data set consists of 20000 messages taken from 20 Usenet newsgroups.</td>
+<td>The UCI KDD Archive Information and Computer Science University of California, Irvine , <a href="http://kdd.ics.uci.edu/databases/20newsgroups/20newsgroups.html">Link</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="neural-network-architectures">Neural Network Architectures</h3>
+<table>
+<thead>
+<tr>
+<th>Network name</th>
+<th>Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlexNet (Variant 1)</td>
+<td>Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E. "Imagenet classification with deep convolutional neural networks", Advances in neural information processing systems 25, 2012.</td>
+</tr>
+<tr>
+<td>CryptoNets</td>
+<td>Gilad-Bachrach, R., Dowlin, N., Laine, K., Lauter, K., Naehrig, M. &amp; Wernsing, J.. (2016). CryptoNets: Applying Neural Networks to Encrypted Data with High Throughput and Accuracy. Proceedings of The 33rd International Conference on Machine Learning, in Proceedings of Machine Learning Research 48:201-210 Available <a href="https://proceedings.mlr.press/v48/gilad-bachrach16.html">here</a>.</td>
+</tr>
+<tr>
+<td>SqueezeNet</td>
+<td>Forrest N. Iandola and Song Han and Matthew W. Moskewicz and Khalid Ashraf and William J. Dally and Kurt Keutzer, "SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and &lt;0.5MB model size", 2016, <a href="https://arxiv.org/abs/1602.07360">link</a>.</td>
+</tr>
+<tr>
+<td>ResNet</td>
+<td>Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun; Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016, pp. 770-778 <a href="https://openaccess.thecvf.com/content_cvpr_2016/html/He_Deep_Residual_Learning_CVPR_2016_paper.html">link</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="credit-card-fraud-detection-using-nn-inference">Credit card fraud detection using NN inference</h4>
+<ul>
+<li>
+<p>Andrea Dal Pozzolo, Olivier Caelen, Reid A. Johnson and Gianluca Bontempi. Calibrating Probability with Undersampling for Unbalanced Classification. In Symposium on Computational Intelligence and Data Mining (CIDM), IEEE, 2015</p>
+</li>
+<li>
+<p>Dal Pozzolo, Andrea; Caelen, Olivier; Le Borgne, Yann-Ael; Waterschoot, Serge; Bontempi, Gianluca. Learned lessons in credit card fraud detection from a practitioner perspective, Expert systems with applications,41,10,4915-4928,2014, Pergamon</p>
+</li>
+<li>
+<p>Dal Pozzolo, Andrea; Boracchi, Giacomo; Caelen, Olivier; Alippi, Cesare; Bontempi, Gianluca. Credit card fraud detection: a realistic modeling and a novel learning strategy, IEEE transactions on neural networks and learning systems,29,8,3784-3797,2018,IEEE</p>
+</li>
+<li>
+<p>Dal Pozzolo, Andrea Adaptive Machine learning for credit card fraud detection ULB MLG PhD thesis (supervised by G. Bontempi)</p>
+</li>
+<li>
+<p>Carcillo, Fabrizio; Dal Pozzolo, Andrea; Le Borgne, Yann-Aël; Caelen, Olivier; Mazzer, Yannis; Bontempi, Gianluca. Scarff: a scalable framework for streaming credit card fraud detection with Spark, Information fusion,41, 182-194,2018,Elsevier</p>
+</li>
+<li>
+<p>Carcillo, Fabrizio; Le Borgne, Yann-Aël; Caelen, Olivier; Bontempi, Gianluca. Streaming active learning strategies for real-life credit card fraud detection: assessment and visualization, International Journal of Data Science and Analytics, 5,4,285-300,2018,Springer International Publishing</p>
+</li>
+<li>
+<p>Bertrand Lebichot, Yann-Aël Le Borgne, Liyun He, Frederic Oblé, Gianluca Bontempi Deep-Learning Domain Adaptation Techniques for Credit Cards Fraud Detection, INNSBDDL 2019: Recent Advances in Big Data and Deep Learning, pp 78-88, 2019</p>
+</li>
+<li>
+<p>Fabrizio Carcillo, Yann-Aël Le Borgne, Olivier Caelen, Frederic Oblé, Gianluca Bontempi Combining Unsupervised and Supervised Learning in Credit Card Fraud Detection Information Sciences, 2019</p>
+</li>
+<li>
+<p>Yann-Aël Le Borgne, Gianluca Bontempi Machine Learning for Credit Card Fraud Detection - Practical Handbook</p>
+</li>
+</ul>
+<h4 id="heart-disease-detection-using-nn-inference">Heart disease detection using NN inference</h4>
+<ul>
+<li>
+<p>https://archive.ics.uci.edu/ml/datasets/Heart+Disease</p>
+</li>
+<li>
+<p>Detrano, R., Janosi, A., Steinbrunn, W., Pfisterer, M., Schmid, J., Sandhu, S., Guppy, K., Lee, S., &amp; Froelicher, V. (1989). International application of a new probability algorithm for the diagnosis of coronary artery disease. American Journal of Cardiology, 64,304--310.</p>
+</li>
+<li>
+<p>David W. Aha &amp; Dennis Kibler. "Instance-based prediction of heart-disease presence with the Cleveland database."</p>
+</li>
+<li>
+<p>Gennari, J.H., Langley, P, &amp; Fisher, D. (1989). Models of incremental concept formation. Artificial Intelligence, 40, 11--61.</p>
+</li>
+</ul>
+<h4 id="completely-random-forest">Completely Random Forest</h4>
+<ul>
+<li>Aslett, Louis JM, Pedro M. Esperança, and Chris C. Holmes. "Encrypted statistical machine learning: new privacy preserving methods." arXiv preprint arXiv:1508.06845 (2015).</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand=false"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51198bba.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
